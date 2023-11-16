@@ -55,6 +55,7 @@ void Dijkstra_Algorithm::Start_Dijkstra(int src)
 
 		for (int j = 0; j < vertices; j++)
 		{
+			// If not visited, there is an edge, distance is not infinity, and if distance at min + matrix distance is less than current distance
 			if (!visited[j] && matrix[index_min][j] != 0 && distance[index_min] != infinity && distance[index_min] + matrix[index_min][j] < distance[j])
 			{
 				distance[j] = distance[index_min] + matrix[index_min][j];
@@ -63,8 +64,8 @@ void Dijkstra_Algorithm::Start_Dijkstra(int src)
 		}
 	}
 
-	// Print the calculated distances and paths
-	std::cout << "Shortest paths from source " << src << ":" << std::endl;
+	// Print distance and path
+	std::cout << "Shortest path from " << src << " to all other vertices :" << std::endl;
 	for (int i = 0; i < vertices; ++i)
 	{
 		std::cout << "- " << src << " To " << i + 1 << std::endl;
