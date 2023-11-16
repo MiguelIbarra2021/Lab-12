@@ -67,11 +67,18 @@ void Dijkstra_Algorithm::Start_Dijkstra(int src)
 	std::cout << "Shortest paths from source " << src << ":" << std::endl;
 	for (int i = 0; i < vertices; ++i)
 	{
-		std::cout << "To vertex " << i + 1 << ": Distance = " << distance[i] << ", Path = ";
+		std::cout << "- " << src << " To " << i + 1 << std::endl;
+		std::cout << "  = Distance: " << distance[i] << std::endl;
+		std::cout << "  = Path: ";
+
 		int current = i;
 		while (current != -1)
 		{
-			std::cout << current + 1 << " ";
+			if (path[current] != -1)
+				std::cout << current + 1 << "<-";
+			else
+				std::cout << current + 1;
+
 			current = path[current];
 		}
 		std::cout << std::endl;

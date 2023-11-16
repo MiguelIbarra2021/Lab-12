@@ -49,11 +49,11 @@ int** Basic_Graph::Get_Matrix()
 void Basic_Graph::Display_Matrix()								// Prints Full Matrix
 {
 	std::cout << "Adjacency Matrix:" << std::endl;
-	std::cout << "    ";
+	std::cout << "     ";
 
 	for (int i = 0; i < vertices; i++)
 	{
-		std::cout << "_" << i << " ";
+		std::cout << "_" << i + 1 << " ";
 	}
 
 	std::cout << std::endl << "    ";
@@ -67,7 +67,7 @@ void Basic_Graph::Display_Matrix()								// Prints Full Matrix
 
 	for (int i = 0; i < vertices; i++)
 	{
-		std::cout << "_" << i << " | ";
+		std::cout << "_" << i + 1 << " | ";
 
 		for (int j = 0; j < vertices; j++)
 		{
